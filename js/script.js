@@ -119,6 +119,7 @@ pageButton.onclick = function () {
 }
 
 
+
 // Question 7
 //Select the button with the class page.
 //When the button is clicked, loop through the array below, add all the prices and
