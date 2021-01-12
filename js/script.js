@@ -96,10 +96,6 @@ doubleFunction(10, "hello");
 
 
 // Question 6
-//Select the button with the class page.
-//When the button is clicked do the following:
-//The h1 element should look like this after the click event:
-//<h1><a href="#">Programming Foundations Course Assignment</a></h1>
 
 var pageButton = document.querySelector(".page");
 var title = document.querySelector("title");
@@ -115,13 +111,11 @@ pageButton.onclick = function () {
     heading1.innerHTML = "<a href index.html>" + heading1.innerHTML + "</>";
     list.style.listStyleType = "none";
     list.style.padding = "0";
-
 }
 
 
-
 // Question 7
-//Select the button with the class page.
+//Select the button with the class price.
 //When the button is clicked, loop through the array below, add all the prices and
 // assign the total to be the innerHTML value of the element with the id total.
 var toys = [
