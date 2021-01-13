@@ -139,6 +139,12 @@ priceButton.onclick = function () {
     for (var i = 0; i < toys.length; i++) {
         var totalSum = parseFloat(toys[i = 0].price) + parseFloat(toys[i = 1].price) + parseFloat(toys[i = 2].price) + parseFloat(toys[i = 3].price);
         console.log(totalSum);
-        publishTotal.innerHTML = publishTotal.innerHTML + "<p>" + totalSum + "</p>"
+        var validSum = isNaN(totalSum);
+        if(validSum === true) {
+            console.log("Please remove NaN value")
+        }
+        else {
+            publishTotal.innerHTML = publishTotal.innerHTML + "<p>" + totalSum + "</p>";
+        }
     }
 }
