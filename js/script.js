@@ -55,7 +55,7 @@ for (var i = 0; i < games.length; i++){
 // Question 4
 
 function whatIDontLike(thingsIDontLike){
-    if(typeof thingsIDontLike != "string") {
+    if(typeof thingsIDontLike !== "string") {
         console.log("Please send in a string")
     }
     else {
@@ -67,32 +67,25 @@ whatIDontLike(true);
 
 
 // Question 5
-//Create a function that accepts two arguments.
-//Inside the function, try to convert the arguments to numbers.
-//If either of the arguments cannot be converted to a number, return the value: 
-//"Invalid argument(s)".
-//If both arguments are number values or can be converted to number values, 
-//subtract the second argument from the first and return the result from the function.
-//Call the function, pass in to two values and assign the return value to be the innerHTML 
-//value of the element with the id subtraction.//
 
 function doubleFunction(number1, number2) {
-    var number1 = parseFloat(number1)
-    var number2 = parseFloat(number2)
-    var result = number1 - number2
-    if(typeof number1 == "number" || typeof number2 == "number") {
-        console.log(result);
+    var number1 = parseFloat(number1);
+    var number2 = parseFloat(number2);
+    var result = number1 - number2;
+    var isNumber = isNaN(result)
+    var invalid = "Invalid argument(s)";
+    var publishResult = document.querySelector("#subtraction");
+    if(isNumber === true) {
+        publishResult.innerHTML = publishResult.innerHTML + "<p>" + invalid + "</p>";
+        return invalid;
     }
     else {
-        console.log("Invalid argument(s)");
+        publishResult.innerHTML = publishResult.innerHTML + "<p>" + result + "</p>";
+        return result;
     }
-    var publishResult = document.querySelector("#subtraction");
-    publishResult.innerHTML = publishResult.innerHTML + "<p>" + result + "</p>";
 }
 
-doubleFunction(10, "hello");
-
-// hjelp med NaN melding
+doubleFunction(10, "fff");
 
 
 // Question 6
@@ -136,3 +129,16 @@ var toys = [
 		price: 89.99,
 	},
 ];
+
+
+var priceButton = document.querySelector(".price");
+
+
+priceButton.onclick = function () {
+    var publishTotal = document.querySelector("#total");
+    for (var i = 0; i < toys.length; i++) {
+        var totalSum = parseFloat(toys[i = 0].price) + parseFloat(toys[i = 1].price) + parseFloat(toys[i = 2].price) + parseFloat(toys[i = 3].price);
+        console.log(totalSum);
+        publishTotal.innerHTML = publishTotal.innerHTML + "<p>" + totalSum + "</p>"
+    }
+}
